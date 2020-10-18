@@ -2,15 +2,17 @@
 const initialstate = {
     error : false,
     data: null,
-    loading: false
+    loading: true
 }
 
 const index = (state = initialstate, action) => {
     switch (action.type) {
-        case 'fetch':
-            return {...state}
-        default: 
-            return {...state}
+        case 'loading':
+            return {...state, loading: action.data}
+        case 'anime_list':
+            return {...state, anime_list: action.data, loading: false}
+        case 'error':
+            return {...state, error: true}
     }
 }
 

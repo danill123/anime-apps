@@ -2,7 +2,8 @@
 const initialstate = {
     error : false,
     data: null,
-    loading: true
+    loading: true,
+    anime_list: undefined
 }
 
 const index = (state = initialstate, action) => {
@@ -13,6 +14,7 @@ const index = (state = initialstate, action) => {
             return {...state, anime_list: action.data, loading: false}
         case 'error':
             return {...state, error: true}
+        
     }
 }
 

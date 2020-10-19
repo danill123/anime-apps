@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
 
-const Card_img = (props) => {
+const Card_manga = (props) => {
     return(
         <View style={{ backgroundColor: "#eee", 
                            borderRadius: 10, overflow: "hidden" ,  
@@ -24,14 +24,10 @@ const Card_img = (props) => {
                     />
                 </View>
                 <View style={{ padding: 10, width: 300 }}>
-                    <Text>{props.title_en}</Text>
-                    <Text style={{ color: "#777", paddingTop: 5 }}>
-                    {props.title_jp}
-                    </Text>
-                    <Text style={{color: "#777"}}>Average Rating : {props.average_rate}</Text>
+                    <Text>{props.name}</Text>
                 </View>
         </View>
     );
 }
 
-export default Card_img;
+export default Card_manga;

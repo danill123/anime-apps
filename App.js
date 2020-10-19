@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import { ApplicationProvider, Layout, Text, Avatar } from '@ui-kitten/components';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { enableScreens } from "react-native-screens";
@@ -24,7 +24,15 @@ const Drawer = createDrawerNavigator();
 const Content = () => {
   return(
     <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text category='h1'>Anime Anjay</Text>
+      <Avatar style={{margin: 5, width: 100, height: 100}} size='giant' source={require('./assets/danill.jpg')}/>
+      <Text>Danill Yudhistira Setiawan</Text>
+      <Text>Contact me</Text>
+      <Layout>
+        <Text>Instagram : danilldev</Text>
+        <Text>Telephon  : 082111780767</Text>
+        <Text>Email     : danillyudhistira@gmail.com</Text>
+      </Layout>
+      <Text>Saran dan Kritik di tunggu</Text>
     </Layout>
   );
 }
@@ -39,10 +47,10 @@ const App = () => (
 
 export default () => (
   <ApplicationProvider {...eva} theme={eva.light}>
-       <Provider store={store}>
-          <NavigationContainer>
-              <App />
-          </NavigationContainer>
-       </Provider>
+    <NavigationContainer>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </NavigationContainer>
   </ApplicationProvider>
 );
